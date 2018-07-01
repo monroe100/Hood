@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% load staticfiles%} 
+{% load bootstrap3 %} 
+{%block content%}
+<body>
+    <div class="well" style="background-color:white;margin-left:20%;margin-right:21%;opacity:0.9;margin-top:2%;">
+        <img style="width:60px;height:60px;border-radius:118px" src="{{photo.profile.profile_pic.url}}">
+        <br>
+        <img style="width:950px;height:750px;margin-top:0.7%;" src="{{photo.post.url}}">
+        <h3>Published On:{{photo.date}}</h3>
+        <h3>Name of Photo:{{photo.name}}</h3>
+        <h3>Posted By:{{photo.profile.name}}</h3>
+        <h3>Caption:"{{photo.post_caption}}."</h3>
+        <h3>Location:{{photo.profile.neighbourhood}}</h3>
+    </div>
+</body>
+{% endblock %}

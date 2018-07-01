@@ -1,0 +1,22 @@
+{% load staticfiles%} 
+{% load bootstrap3 %} 
+{%block content%}
+{% block styles %}
+    {% bootstrap_css %}
+{% endblock %}
+<body style="background-image:url('https://images.pexels.com/photos/1095901/pexels-photo-1095901.png?auto=compress&cs=tinysrgb&h=350')">
+        <h1 style="color:white;text-align: center;font-size:60px;font-family:sans-serif;">Choose You're Desired Neighbourhood.</h1>
+    {% for neighbourhood in neighbourhoods %}
+    <div class="well"style="background-color:white;margin-left:20%;margin-right:21%;opacity:0.9;margin-top:2%;">
+        <a  style="color:black;text-align: center;"href="{% url 'home' neighbourhood.id %}">
+            <h2>{{neighbourhood.neighbourhood_name}} Neighbourhood.</h2>
+        </a>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+{% block scripts %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            {% bootstrap_javascript %}
+{% endblock %}
+</body>

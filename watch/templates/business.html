@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% load staticfiles%} 
+{% load bootstrap3 %} 
+{%block content%}
+    {% for business in businesses %}
+    
+        <div class="well"style="background-color:white;margin-left:20%;margin-right:21%;opacity:0.9;margin-top:2%;">
+            <h2 style="padding-left:5px;padding-right:20px;margin-top:-10px;margin-bottom:-13px;font-weight:bolder;text-decoration:underline;">{{business.name}}</h2>
+            <h3>Owner:{{business.profile.name}}.</h3>
+            <img src="{{business.image.url}}" style="width:30%;">
+            <h3>Location:{{business.neighbourhood.neighbourhood_name}}.</h3>
+            <h3>Business Email:"{{business.b_email}}"</h3>
+            <h3>Neighbourhood:"{{business.neighbourhood.neighbourhood_name}} Neighbourhood."</h3>
+        </div>
+    {% endfor %}
+{% endblock %}

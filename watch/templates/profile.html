@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{% load staticfiles%} 
+{% load bootstrap3 %} 
+{%block content%}
+<body>
+    <div class="well"style="background-color:white;margin-left:26%;margin-right:16%;opacity:0.9;margin-top:2%;">
+        {% for detail in info %}
+            <h3 style="padding-left:5px;padding-right:20px;margin-top:-10px;margin-bottom:-13px;font-weight:bolder;"><img style="width:60px;height:60px;border-radius:118px" src="{{{detail.profile_pic.url}}">{{request.user.username}}</h3>
+        {% endfor %}
+    </div>
+</body>
+{% endblock %}

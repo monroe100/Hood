@@ -1,0 +1,45 @@
+{%extends "registration/base.html"%} {% load bootstrap3 %} {% block content %}
+<link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet"> 
+<body style="font-family: 'Concert One', cursive; font-size:60px;">
+<div class="container">
+  <div class="row">
+    
+    <div class="row">
+    <div class="col-md-6">
+
+ </div>
+    <div class="col-md-4">
+      {% if form.errors %}
+      <p> Password or Username is incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+        <b><em><h1 style="color:rgb(7, 5, 5); font-size:60px;"class="text-center">NEIGHBOURHOOD-WATCH</h1></em></b>
+
+        <div class="panel-heading" style="color:rgb(141, 40, 47);">
+
+          <h3 style="font-size:20px;" class="text-center">Sign In</h3>
+        </div>
+        <div class="panel-body"style="color:#D98880;"> 
+
+          <form style="font-size:20px;"action="/accounts/login/" method="post">
+            {% csrf_token %} {% bootstrap_form form%}
+
+            <div class="form-group">
+              <input style="font-size:20px;" type="submit" class="btn btn-primary btn-sm" value="Login">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+<h4 style="font-size:30px;">Dont Have an account?<a style="color:rgb(68, 3, 3);" href="/accounts/register">Click here to Register</a></h4>
+        </div>
+
+      </div>
+</div>
+    </div> 
+    
+    <div class="col-md-4"></div>
+  </div>
+</div>
+</body>
+{% endblock %}
